@@ -1,0 +1,16 @@
+■
+src/qna.DTO 복사
+src/qna.DAO 복사
+
+■
+command.properties 추가
+/qna/writeForm.do=action.qna.WriteFormAction
+/qna/writePro.do=action.qna.WriteProAction
+■
+src/action.qna.WriteFormAction.java 작성
+src/action.qna.WriteProAction.java 작성
+
+■
+WebContent
+ qna/writeForm.jsp
+ qna/writePro.jsp

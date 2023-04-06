@@ -1,0 +1,80 @@
+02_문서.txt
+
+lib/*.jar
+META-INF/context.xml 복사
+
+
+1.  DB작업
+2.  DTO,DAO 작업
+
+3.  Action.java ( jsp로직 부분을 Action에 코딩한다 )
+
+src/command.CommandAction.java 인터페이스(추상 클래스만 존재한다)
+인터페이스를 상속받아서(command.CommandAction)
+클래스를 작성한다(action.board의 ListAction클래스)
+
+src/action.board.ListAction.java
+
+src/action.board.WriteFormAction.java
+src/action.board.WriteProAction.java
+
+src/action.board.list.ContentAction.java
+
+src/action.board.UpdateFormAction.java
+src/action.board.UpdateProAction.java
+
+src/action.board.DeleteFormAction.java
+src/action.board.DeleteProAction.java
+
+---------------------예를 들어
+src/action.qna.ListAction.java
+src/action.qna.WriteFormAction.java
+
+------------------------------
+4. Controller 작성
+------------------------------
+src/controller.ControllerDispatcher.java
+
+5. WEB-INF/command.properties
+          /web.xml
+------------------------------
+    key             value
+/board/writeForm.do=action.board.WriteFormAction
+/board/writePro.do=action.board.WriteProAction
+
+/board/list.do=action.board.ListAction
+------------------------------------------
+6. web.xml 컨트롤러 등록
+------------------------------------------
+■ 처리과정
+
+1. 웹 요청
+2. 컨트롤러가 받는다 
+3. uri에 맵핑된 Action을 처리하게 한다
+4. jsp(view) 화면에 반영한다
+--------------------------------------
+■ 작성 순서
+1. Model(back-end) : DTO,DAO이전것 복사
+  
+   ControllerDispatcher.java작성
+   web.xml에 등록
+   WEB-INF/command.properties
+   
+2. action.board.ListAction.java 작성
+3. command.properties 에 추가
+4. jsp(view)작성
+5. 실행
+------------------------------------
+WebContent
+ /imgs 복사
+ /board/writeForm.jsp
+ /board/writePro.jsp
+ 
+ /board/list.jsp
+ /board/content.jsp
+ 
+ /board/updateForm.jsp
+ /board/updatePro.jsp
+ 
+ /board/deleteForm.jsp
+ /board/deletePro.jsp

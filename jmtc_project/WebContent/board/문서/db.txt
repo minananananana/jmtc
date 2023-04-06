@@ -1,0 +1,17 @@
+create table board(
+board_idx int not null primary key auto_increment,
+board_name varchar(30) not null,
+board_title varchar(50) not null,
+board_content text not null,
+board_pw varchar(20) not null,
+
+board_date datetime,
+board_readcount int default 0,
+
+board_ref int not null,#글 그룹
+board_ordNo int not null,#글 순서
+board_levelNo int not null,#답글 깊이, 들여쓰기
+board_ip varchar(20)
+
+member_idx int not null foreign key auto_increment
+);
